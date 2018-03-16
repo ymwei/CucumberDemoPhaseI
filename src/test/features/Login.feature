@@ -1,6 +1,6 @@
-@login
+@web
 Feature: Login
-  @p1 @smoketest @automated
+  @p1 @smoketest @automated @en
   Scenario: Login with correct credential
     Given I open login page
     When I enter correct "userName" and "password"
