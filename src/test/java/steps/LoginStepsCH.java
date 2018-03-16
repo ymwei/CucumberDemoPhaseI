@@ -15,9 +15,9 @@ public class LoginStepsCH {
 
     @假如("^我打开登录页面$")
     public void iOpenLoginPage() throws Throwable {
-        System.setProperty("webdriver.chrome.driver","tools/chrome/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","tools/chrome/chromedrivermac");
         webDriver = new ChromeDriver();
-        webDriver.navigate().to("http://localhost:8080/login.html");
+        webDriver.navigate().to("http://localhost:8081/login.html");
     }
 
     @当("^我输入正确的用户名\"([^\"]*)\"和密码\"([^\"]*)\"$")
@@ -32,7 +32,7 @@ public class LoginStepsCH {
     }
     @那么("^我跳转到首页$")
     public void iLoginToHomePage() throws Throwable {
-        webDriver.navigate().to("http://localhost:8080/index.html");
+        webDriver.navigate().to("http://localhost:8081/index.html");
         String actualTxt = webDriver.findElement(By.xpath("//div[@name='succeed']")).getText();
         String expectedTxt = "登录成功";
         Assert.assertEquals("校验是否登录成功", actualTxt, expectedTxt);

@@ -14,9 +14,9 @@ public class LoginSteps {
 
     @Given("^I open login page$")
     public void iOpenLoginPage() throws Throwable {
-        System.setProperty("webdriver.chrome.driver","tools/chrome/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","tools/chrome/chromedrivermac");
         webDriver = new ChromeDriver();
-        webDriver.navigate().to("http://localhost:8080/login.html");
+        webDriver.navigate().to("http://localhost:8081/login.html");
     }
 
     @When("^I enter correct \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -33,7 +33,7 @@ public class LoginSteps {
 
     @Then("^I go to home page$")
     public void iGoToHomePage() throws Throwable{
-        webDriver.navigate().to("http://localhost:8080/index.html");
+        webDriver.navigate().to("http://localhost:8081/index.html");
         String actualTxt = webDriver.findElement(By.xpath("//div[@name='succeed']")).getText();
         String expectedTxt = "登录成功";
         Assert.assertEquals("校验是否登录成功", actualTxt, expectedTxt);
