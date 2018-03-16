@@ -2,14 +2,12 @@
 Feature: Login
   @p1 @smoketest @automated @en
   Scenario: Login with correct credential
-    Given I open login page
     When I enter correct "userName" and "password"
     When I click login
     Then I go to home page
 
   @p2 @smoketest
   Scenario Outline: Login with invalid credentail
-    Given I open login page
     When I enter incorrect "<userName>" and "<password>"
     When I click login
     Then I see "<errorMessage>"
